@@ -1,0 +1,69 @@
+.card.draggable {
+  margin-bottom: 1rem;
+  cursor: grab;
+}
+
+.droppable {
+  background-color: var(--success);
+  min-height: 120px;
+  margin-bottom: 1rem;
+}
+
+.bg-light {
+  height: 100%;
+
+  h6 {
+    padding: 5px 15px;
+  }
+}
+
+.block {
+  height: 100%;
+}
+
+.flex-row {
+  max-width: 100%;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  padding-top: 5px;
+  color: var(--bg-white);
+  margin-right: 7px;
+}
+
+.circle {
+  h1 {
+    font-size: 15px;
+    text-align: center;
+  }
+}
+
+.scroll-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+}
+
+.max-h-r {
+  height: 95%;
+}
+
+.columns-name {
+  padding-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#board {
+  display: flex;
+}

@@ -1,0 +1,27 @@
+@import "../../../assets/styles/colors.scss";
+
+.form {
+  position: relative;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+  input {
+    padding-left: 30px;
+  }
+
+  i {
+    position: absolute;
+    font-size: 18px;
+    top: 6px;
+    left: 6px;
+  }
+
+  #error-register {
+    font-size: 18px;
+    color: crimson;
+  }
+}
+
+.bg-form {
+  background-color: var(--bg-light-blue);
+}

@@ -1,0 +1,47 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Key</th>
+      <th scope="col">Title</th>
+      <th scope="col">Date created</th>
+      <th scope="col">Status</th>
+      <th scope="col">Assignee</th>
+      <th scope="col">Priority</th>
+      <th scope="col">Reporter</th>
+    </tr>
+    <ng-container *ngIf="tickets?.length">
+      <tr (click)="openModal(ticket)" *ngFor="let ticket of tickets; trackBy: identify">
+        <th>{{ticket.ticketNumber}}</th>
+        <td>{{ticket.title}}</td>
+        <td>{{ticket.dateCreated}}</td>
+        <td>{{ticket.status.name!}}</td>
+        <td>{{ticket.assignee.name!}}</td>
+        <td>{{ticket.priority.priority!}}</td>
+        <td>{{ticket.reporter.name!}}</td>
+      </tr>
+    </ng-container>
+
+  </thead>
+  <tbody id="ticket-list-body">
+  </tbody>
+</table>
+
+<div class="pagination-div">
+  <nav>
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <button class="page-link" id="previous">
+          &laquo;
+        </button>
+      </li>
+
+      <div class="d-flex" id="item-pagination"></div>
+
+      <li class="page-item">
+        <button class="page-link" id="next">
+          &raquo;
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>

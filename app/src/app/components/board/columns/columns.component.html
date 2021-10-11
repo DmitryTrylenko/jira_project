@@ -1,0 +1,28 @@
+<div class="container max-h" *ngIf="statuses?.length">
+  <div class="row flex-row flex-sm-nowrap py-3 max-h-r" id="board">
+    <div (onDrop)="onItemDrop($event)" droppable class="block" *ngFor="let status of statuses; trackBy: identify"
+      [attr.data-id]="status._id" [dragOverClass]="'drag-target-border'">
+      <div class="card bg-light">
+        <h6 class="card-title text-uppercase text-truncate py-2">{{ status.name }}</h6>
+        <div class="card-body position-relative">
+          <div class="items border border-light overflow-auto scroll-container">
+
+            <div [draggable] [dragData]="ticket" ticket
+              *ngFor="let ticket of getTicketsByStatus(status); trackBy: identify" class="card-body p-2">
+              <div class="card-title d-flex">
+                <span class="circle" [style.background-color]="ticket.assignee?.avaColor">
+                  <h1>{{ ticket.assignee.name?.slice(0, 1) }}</h1>
+                </span>
+                <span class="lead fw-normal"> {{ ticket.ticketNumber }}</span>
+              </div>
+              <p class="columns-name">
+                {{ ticket.title }}
+              </p>
+              <button (click)="openModal(ticket)" class="btn btn-primary btn-sm js-emit-event">View</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

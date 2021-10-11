@@ -1,0 +1,96 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="ticket-number"></h5>
+    <button (click)="close()" 
+						type="button" 
+						class="btn-close" 
+						data-bs-dismiss="modal" 
+						aria-label="Close"></button>
+  </div>
+
+  <div class="modal-body row justify-content-between">
+    <div class="mb-3">
+      <input type="text" 
+						 class="form-control borders-hidden title" 
+						 id="ticket-title" 
+						 value={{ticket.title}}>
+    </div>
+
+    <div class="col">
+      <div class="mb-3 me-5">
+        <label for="ticket-body" class="form-label">Description:</label>
+        <textarea [(ngModel)]="selectedDescription" 
+									class="form-control borders-hidden" 
+									id="ticket-body"
+          				rows="6">{{ticket.body}}</textarea>
+      </div>
+    </div>
+
+    <div class="col ms-5">
+      <div class="mb-3 row ms-5">
+        <div class="col">
+          <label for="reporter" class="form-label">Reporter: </label>
+          <span id="reporter">{{ticket.reporter.name}}</span>
+        </div>
+      </div>
+
+      <div class="mb-3 row ms-5">
+        <div class="col">
+          <label for="assignee" class="form-label">Assignee: </label>
+          <select [(ngModel)]="selectedAssignee" 
+									class="form-select inline borders-hidden" 
+									id="assignee"
+            			aria-label="Assignee">
+            <option *ngFor="let user of users" [value]="user._id">
+              {{user.name}}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-3 row ms-5">
+        <div class="col ps-6">
+          <label for="priority" class="form-label">Priority: </label>
+          <select [(ngModel)]="selectedPriority" 
+									class="form-select inline borders-hidden" 
+									id="priority"
+            			aria-label="Priority">
+            <option *ngFor="let priority of priorities" [value]="priority._id">
+              {{priority.priority}}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-3 row ms-5">
+        <div class="col">
+          <label for="status" class="form-label">Status: </label>
+          <select [(ngModel)]="selectedStatus" 
+									class="form-select inline borders-hidden" 
+									id="status"
+            			aria-label="Status">
+            <option *ngFor="let status of statuses" [value]="status._id">
+              {{status.name}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="date-updated">
+      <span id="date-updated">{{ticket.lastUpdated}}</span>
+    </div>
+
+  </div>
+
+  <div class="modal-footer">
+    <button (click)="close()" 
+						type="button" 
+						class="btn btn-secondary" 
+						data-bs-dismiss="modal">Close</button>
+    <button (click)="onSubmit()" 
+						type="button" 
+						class="btn btn-primary upd-btn" 
+						id="save-btn">Save</button>
+  </div>
+</div>

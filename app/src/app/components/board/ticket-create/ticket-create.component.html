@@ -1,0 +1,65 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <h5 class="modal-title">Create ticket</h5>
+    <button (click)="close()" 
+						type="button" 
+						class="btn-close" 
+						data-bs-dismiss="modal" 
+						aria-label="Close"></button>
+  </div>
+
+  <div class="modal-body">
+    <div class="mb-3">
+      <label for="ticket-title" class="form-label">Title</label>
+      <input [(ngModel)]="selectedTitle" 
+						 type="text" 
+						 class="form-control" 
+						 id="ticket-title" 
+						 value="Please type title"
+        		 required>
+    </div>
+    <div class="invalid-feedback">
+      Please provide a ticket title.
+    </div>
+
+    <div class="mb-3">
+      <label for="ticket-body" class="form-label">Description</label>
+      <textarea [(ngModel)]="selectedDescription" 
+								class="form-control" 
+								id="ticket-body" 
+								rows="6"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="assignee" class="form-label">Assignee</label>
+      <select [(ngModel)]="selectedAssignee" 
+							class="form-select" 
+							id="assignee" 
+							aria-label="Assignee">
+        <option *ngFor="let user of users" [value]="user._id">
+          {{user.name}}
+        </option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="priority" class="form-label">Priority</label>
+      <select [(ngModel)]="selectedPriority" 
+							class="form-select" 
+							id="priority" 
+							aria-label="Priority">
+        <option *ngFor="let priority of priorities" [value]="priority._id">
+          {{priority.priority}}
+        </option>
+      </select>
+    </div>
+
+    <div class="modal-footer">
+      <button (click)="close()" 
+							type="button" 
+							class="btn btn-secondary" 
+							data-bs-dismiss="modal">Close</button>
+      <button (click)="onSubmit()" class="btn btn-primary" id="save-btn">Save</button>
+    </div>
+  </div>

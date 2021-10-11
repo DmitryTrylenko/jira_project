@@ -1,0 +1,25 @@
+.inline {
+  width: auto;
+  display: inline;
+}
+
+label {
+  font-weight: bolder;
+  font-size: 0.8rem;
+}
+
+.borders-hidden {
+  border: none;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.date-updated {
+  color: var(--light-grey);
+  font-size: 0.7rem;
+  opacity: .8;
+  margin-top: 5rem;
+}

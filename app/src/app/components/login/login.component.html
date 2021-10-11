@@ -1,0 +1,50 @@
+<div class="container max-h">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 mt-5">
+      <div class="bg-form card px-5 py-2">
+        <h3 class="mt-3 text-center">Login Form</h3>
+        <small class="mt-2 text-muted text-center">Let's go champ! Jira is waiting for you!</small>
+        <form [formGroup]="form" 
+							(ngSubmit)="onSubmit()" 
+							action="submit" 
+							class="d-flex flex-column" 
+							id="login-form"
+          		novalidate>
+          <div class="form-input">
+            <i class="bi bi-envelope-fill"></i>
+            <input type="email" 
+									 class="form-control" 
+									 id="auth-email" 
+									 placeholder="login" 
+									 formControlName="login"
+              		 required>
+            <mdb-error *ngIf="form.get('login')?.errors?.email">
+              Login is uncorrect!
+            </mdb-error>
+          </div>
+          <div class="form-input">
+            <i class="bi bi-lock-fill"></i>
+            <input type="password" 
+									 class="form-control" 
+									 id="auth-password" 
+									 placeholder="password"
+              		 formControlName="password" 
+									 required>
+            <mdb-error *ngIf="form.get('password')?.errors?.pattern">
+              Password is uncorrect!
+            </mdb-error>
+          </div>
+          <button [disabled]="!form.valid" 
+									type="submit" 
+									class="btn btn-primary mt-3 mx-auto">Login</button>
+        </form>
+        <div class="text-center mt-3 mb-3">
+          <span>Not a member?</span>
+          <a routerLink="/signup" class="text-decoration-none">Sign up now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>

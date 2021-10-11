@@ -1,0 +1,26 @@
+.form-input {
+  position: relative;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+  input {
+    padding-left: 30px;
+  }
+
+  i {
+    position: absolute;
+    font-size: 18px;
+    top: 6px;
+    left: 6px;
+  }
+}
+
+.bg-form {
+  background-color: var(--bg-light-blue);
+}
+
+#auth-err {
+  color: var(--bs-danger);
+  text-align: center;
+  font-weight: bolder;
+}

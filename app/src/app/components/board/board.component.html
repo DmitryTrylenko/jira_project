@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light nav-color">
+  <div class="container-fluid">
+    <a class="navbar-brand logo-c">
+      <i class="bi bi-kanban-fill icon-style"></i>
+      <h2>Jira</h2>
+    </a>
+    <button class="navbar-toggler" 
+						type="button" 
+						data-bs-toggle="collapse" 
+						data-bs-target="#navbarNavAltMarkup"
+      			aria-controls="navbarNavAltMarkup" 
+						aria-expanded="false" 
+						aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse nav-jc" id="navbarNavAltMarkup">
+      <form class="d-flex icon-form">
+        <button (click)="openModal()" class="btn btn-header" type="button" id="btn-new-ticket">
+          <i class="bi bi-patch-plus icon-style"></i>
+        </button>
+        <button class="btn btn-header" type="button" id="btn-status-modal">
+          <i class="bi bi-gear-wide-connected icon-style"></i>
+        </button>
+
+        <div class="dropdown" id="user-dropdown-wrapper">
+          <app-user-dropdown></app-user-dropdown>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div id="modals-container">
+  <div id="ticket-modal-wrapper"></div>
+  <div id="status-modal-wrapper"></div>
+  <div id="delete-status-modal"></div>
+</div>
+
+<div id="toster-container"></div>
+
+<div class="container mt-3 max-h">
+  <app-filter></app-filter>
+
+  <div class="mt-3 max-h">
+    <div class="tab-content max-h" id="myTabContent">
+      <nav ngbNav #nav="ngbNav" class="nav-tabs">
+        <ng-container ngbNavItem="'columns'">
+          <a ngbNavLink [routerLink]="['./columns']">Kanban</a>
+          <ng-template ngbNavContent>
+            <router-outlet></router-outlet>
+          </ng-template>
+        </ng-container>
+        <ng-container ngbNavItem="'list'">
+          <a ngbNavLink [routerLink]="['./list']">List</a>
+          <ng-template ngbNavContent>
+            <router-outlet></router-outlet>
+          </ng-template>
+        </ng-container>
+      </nav>
+
+      <div [ngbNavOutlet]="nav" class="mt-2 max-h"></div>
+    </div>
+  </div>
+</div>

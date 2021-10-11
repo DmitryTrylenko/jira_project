@@ -1,0 +1,83 @@
+@import url("../../../node_modules/bootstrap/dist/css/bootstrap.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+@import "../../app/components/login/login.component.scss";
+@import "../../app/components/signup/signup.component.scss";
+@import "../../app/components/board/board.component.scss";
+@import "../../app/components/board/columns/columns.component.scss";
+@import "./colors.scss";
+
+html,
+body,
+main {
+  height: 80vh;
+}
+
+body {
+  background-color: var(--bg-white);
+}
+
+#first-div {
+  height: 100%;
+}
+
+.nav-jc {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon-form button {
+  margin-right: 10px;
+}
+
+.login-form {
+  padding: 15px;
+  border: solid 1px var(--light-grey);
+  height: 300px;
+  width: 300px;
+}
+
+.nav-color {
+  background-color: var(--bg-light-blue);
+}
+
+.icon-style {
+  font-size: 2rem;
+  color: cornflowerblue;
+}
+
+.btn-header {
+  color: var(--navy);
+  padding: 0 5px;
+  height: 2.6rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.btn-header:hover {
+  color: var(--bg-white);
+  background-color: var(--navy);
+  border-color: var(--navy);
+}
+
+.logo-c {
+  display: flex;
+  align-items: center;
+
+  h2 {
+    margin: 0;
+    padding-left: 10px;
+  }
+}
+
+.max-h {
+  height: 100%;
+}
+
+.bi {
+  line-height: 1.5;
+}
+
+.mat-typography h2 {
+  margin: 15px;
+}

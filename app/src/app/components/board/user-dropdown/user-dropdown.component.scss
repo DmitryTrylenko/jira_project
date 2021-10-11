@@ -1,0 +1,12 @@
+#btn-logout:hover {
+  font-weight: bolder;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu.show {
+  right: 10px;
+  left: auto;
+}
